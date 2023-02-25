@@ -29,5 +29,10 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  max-width: 70%;
+  width: 100%;
+}
+@media all and (min-width: 786px) {
+  .destination-search-search-results {
+    max-width: 70%;
+  }
 }
