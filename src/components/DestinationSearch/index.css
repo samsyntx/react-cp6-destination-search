@@ -3,18 +3,28 @@
   margin: 0px;
   box-sizing: border-box;
 }
-.destination-search-container {
+.main-search-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 25px;
   font-family: Roboto;
 }
 .destination-search-main-heading {
   font-size: 25px;
-  padding-top: 25px;
+  padding: 25px;
+  text-align: center;
 }
+.search-container {
+  display: flex;
+}
+.search-icon-display-css {
+  width: 25px;
+  position: relative;
+  right: 25px;
+  cursor: pointer;
+}
+
 .destination-search-box {
   border: 1px solid #252627;
   border-radius: 5px;
@@ -24,6 +34,7 @@
   background-color: #f5f5f5;
 }
 .destination-search-search-results {
+  list-style: none;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

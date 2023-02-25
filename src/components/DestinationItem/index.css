@@ -2,12 +2,19 @@
   padding: 0px;
   margin: 0px;
 }
+
 .card-container {
-  margin: 25px;
+  padding: 25px;
+  margin: 0px;
 }
-.card-inner-container {
-  max-width: 150px;
+.card-content {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 .item-image-control {
   width: 180px;
 }

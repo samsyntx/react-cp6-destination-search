@@ -3,31 +3,45 @@ import DestinationItem from '../DestinationItem'
 import './index.css'
 
 class DestinationSearch extends Component {
-  gettingSearchResults = event => {
-    console.log(event.target.value)
+  state = {searchInput: ''}
+
+  typingSearchInput = event => {
+    this.setState({
+      searchInput: event.target.value,
+    })
   }
 
   render() {
+    const {searchInput} = this.state
     const {destinationsList} = this.props
-
-    const DestinationResults = destinationsList.map(perItem => (
-      <DestinationItem cardItems={perItem} key={perItem.id} />
-    ))
+    const DestinationResults = destinationsList.filter(eachDestination =>
+      eachDestination.name.toLowerCase().includes(searchInput.toLowerCase()),
+    )
 
     return (
-      <div className="destination-search-container">
+      <div className="main-search-container">
         <h1 className="destination-search-main-heading">Destination Search</h1>
-        <div className="destination-search-container">
+        <div className="search-container">
           <input
-            onChange={this.gettingSearchResults}
+            onChange={this.typingSearchInput}
             className="destination-search-box"
             type="search"
             placeholder="Search"
           />
+          <img
+            className="search-icon-display-css"
+            src="https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png"
+            alt="search icon"
+          />
         </div>
-        <div className="destination-search-search-results">
-          {DestinationResults}
-        </div>
+        <ul className="destination-search-search-results">
+          {DestinationResults.map(eachDestination => (
+            <DestinationItem
+              cardItems={eachDestination}
+              key={eachDestination.id}
+            />
+          ))}
+        </ul>
       </div>
     )
   }
